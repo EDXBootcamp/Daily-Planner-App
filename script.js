@@ -43,7 +43,7 @@ $(document).ready(function () {
      var currentHour = dayjs().hour();
 
      // Loop through time blocks to apply color coding for past, present and future
-     $(".time-block").each(function () {
+    $(".time-block").each(function () {
        var blockHour = parseInt($(this).find(".hour").text());
  
        if (blockHour < currentHour) {
@@ -53,7 +53,19 @@ $(document).ready(function () {
        } else {
          $(this).addClass("future");
        }
-     });
+    });
+
+    // Event listener for save button clicks
+    $(".saveBtn").on("click", function () {
+        // Get the user input from the textarea
+        var eventDescription = $(this).siblings(".description").val();
+  
+        // Get the hour of the time block
+        var eventHour = parseInt($(this).siblings(".hour").text());
+  
+        // Save the event to local storage
+        localStorage.setItem("event_" + eventHour, eventDescription);
+    });
 
 
      
