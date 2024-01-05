@@ -68,6 +68,20 @@ $(document).ready(function () {
     });
 
 
+    // Load events from local storage
+    $(".time-block").each(function () {
+        var blockHour = parseInt($(this).find(".hour").text());
+  
+        // Retrieve the event from local storage
+        var savedEvent = localStorage.getItem("event_" + blockHour);
+  
+        // Display the saved event in the textarea
+        if (savedEvent) {
+          $(this).find(".description").val(savedEvent);
+        }
+    });
+
+
      
      
 });
