@@ -39,6 +39,23 @@ $(document).ready(function () {
     }
 
 
+     // Get the current hour
+     var currentHour = dayjs().hour();
+
+     // Loop through time blocks to apply color coding for past, present and future
+     $(".time-block").each(function () {
+       var blockHour = parseInt($(this).find(".hour").text());
+ 
+       if (blockHour < currentHour) {
+         $(this).addClass("past");
+       } else if (blockHour === currentHour) {
+         $(this).addClass("present");
+       } else {
+         $(this).addClass("future");
+       }
+     });
+
+
      
      
 });
