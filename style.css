@@ -21,6 +21,14 @@ body {
     border-bottom: 10px solid black;
     padding: 60px;
   }
+  .lead-timer{
+    background-color: #ffffff00;
+    display: inline-block;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 10px 25px;
+    text-align: center;
+    margin-top: 10px;
+  }
   
   .description {
     white-space: pre-wrap;
